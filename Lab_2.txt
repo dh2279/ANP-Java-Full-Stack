@@ -1,0 +1,147 @@
+1. WAP for creating a mini calculator for performing a particular operation based on user choice. ex. if the user will select the addition operation then the output should be the addition of the given two nos.
+
+package com.study;
+import java.util.*;
+public class Mini_Calculator {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("------Mini Calculator-----");
+		System.out.println("Enter your choice :");
+		System.out.println(" + ");
+		System.out.println(" - ");
+		System.out.println(" * ");
+		System.out.println(" / ");
+
+		char choice = sc.next().charAt(0);
+		
+		System.out.println("Enter first number:");
+		double a = sc.nextDouble();
+		
+		System.out.println("Enter second number:");
+		double b = sc.nextDouble();
+
+		double result;
+		switch(choice)
+		{
+		case '+' :
+			result = a+b;
+			System.out.println("Addition is " + result);
+			break;
+			
+		case '-' :
+			result = a-b;
+			System.out.println("Substraction is " + result);
+			break;
+			
+		case '*' :
+			result = a*b;
+			System.out.println("Multiplication is " + result);
+			break;
+			
+		case '/' :
+			result = a/b;
+			System.out.println("Division is " + result);
+			break;
+			
+		default :
+			System.out.println("Invalid Operator!");
+			break;
+			
+		}
+					
+		sc.close();
+	}
+
+}
+
+
+2. WAP for creating a banking Application .you have to take input from the user whether the user wants to deposit, withdraw, or find a current balance.
+
+package com.study;
+import java.util.Scanner;
+
+class BankAccount {
+    private double balance;
+
+    // Constructor to initialize the balance to 0
+    public BankAccount() {
+        balance = 0.0;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Amount to deposit should be greater than 0.");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0) {
+            if (balance >= amount) {
+                balance -= amount;
+                System.out.println("Withdrew: " + amount);
+            } else {
+                System.out.println("Insufficient balance.");
+            }
+        } else {
+            System.out.println("Amount to withdraw should be greater than 0.");
+        }
+    }
+
+    // Method to check the balance
+    public void checkBalance() {
+        System.out.println("Current balance: " + balance);
+    }
+}
+
+public class Banking_App{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        BankAccount account = new BankAccount();
+
+        while (true) {
+            // Display the menu to the user
+            System.out.println("\n--- Bank Application ---");
+            System.out.println("1. Deposit Money");
+            System.out.println("2. Withdraw Money");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
+            System.out.println("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1: // Deposit money
+                    System.out.print("Enter amount to deposit: ");
+                    double depositAmount = scanner.nextDouble();
+                    account.deposit(depositAmount);
+                    break;
+
+                case 2: // Withdraw money
+                    System.out.print("Enter amount to withdraw: ");
+                    double withdrawAmount = scanner.nextDouble();
+                    account.withdraw(withdrawAmount);
+                    break;
+
+                case 3: // Check balance
+                    account.checkBalance();
+                    break;
+
+                case 4: // Exit
+                    System.out.println("Exiting... Thank you for using our banking services!");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
+
+
