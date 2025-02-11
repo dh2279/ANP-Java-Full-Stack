@@ -1,0 +1,45 @@
+1) WRITE JAVA PROGRAM TO PRINT "HELLO WORLD" MESSAGE
+package com.study;
+
+public class Demo 
+{
+
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello");
+	}
+
+}
+
+
+2) WRITE AJAVA PROGRAM TO DEMO ABOUT ALL JAVA PRIMITIVE DATATYPES
+package com.study;
+
+public class Data_Type {
+
+	public static void main(String[] args) {
+		
+		int i = 10;
+		boolean b = true;
+		char c = 'a';
+		byte b1 = 1;
+		short s = 2;
+		long l = 234568493;
+		double d = 2.5;
+		float f = 1.5f;
+		
+		System.out.println("Integer:"+ i);
+		System.out.println("Boolean:"+ b);
+		System.out.println("Char:"+ c);
+		System.out.println("Byte:"+ b1);
+		System.out.println("Short:"+ s);
+		System.out.println("Long:"+ l);
+		System.out.println("Double:"+ d);
+		System.out.println("Float:"+ f);
+
+
+		
+	}
+
+}
+
